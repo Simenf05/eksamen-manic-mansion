@@ -14,7 +14,17 @@ class Player {
     }
 
     move(deltaX, deltaY) {
+        this.x += deltaX
+        this.y += deltaY
+    }
 
+    getDrawInfo() {
+        return {
+            x: this.x,
+            y: this.y,
+            width: this.width,
+            height: this.height,
+        }
     }
 
 
