@@ -6,7 +6,7 @@ class Game {
 
     constructor(container, playerImg, backgroundImg) {
 
-        this.player = new Player(playerImg)
+        this.player = new Player(playerImg, 600, 400)
         this.brett = new Brett(container, backgroundImg, 600, 400)
 
         this.keys = {}
@@ -33,7 +33,7 @@ class Game {
             this.render()
             this.movement()
 
-        }, 10);
+        }, 5);
     }
 
     stop() {

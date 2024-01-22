@@ -2,17 +2,21 @@
 
 class Player {
 
-    speed = 3;
+    speed = 1;
     width = 20;
     height = 20;
     x;y;
+    screenWidth;
+    screenHeight;
 
-    constructor(img) {
+    constructor(img, screenWidth, screenHeight) {
         
         this.img = img
         this.x = 0
         this.y = 0
 
+        this.screenWidth = screenWidth
+        this.screenHeight = screenHeight
     }
 
     movement(keys) {
@@ -23,8 +27,17 @@ class Player {
     }
 
     move(deltaX, deltaY) {
-        this.x += deltaX
-        this.y += deltaY
+        if (this.x + deltaX >= 0) {
+            if (this.x + deltaX <= this.screenWidth - this.width) {
+                this.x += deltaX
+            }
+        }
+        
+        if (this.y + deltaY >= 0) {
+            if (this.y + deltaY <= this.screenHeight - this.height) {
+                this.y += deltaY
+            }
+        }
     }
 
     getDrawInfo() {
@@ -36,7 +49,5 @@ class Player {
             height: this.height,
         }
     }
-
-
 }
 

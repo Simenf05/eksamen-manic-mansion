@@ -32,11 +32,7 @@ class Brett {
 
     draw(info) {
         this.ctx.drawImage(info.img, info.x, info.y, info.width, info.height)
-    } 
-
-
-    
-
+    }
 
 
 }
